@@ -1,0 +1,50 @@
+name: Release
+on:
+  push:
+    branches:
+      - main
+jobs:
+  release:
+    name: 🚀 Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v4
+        with:
+          # Fetch all history and tags to allow Nx to determine the correct version
+          fetch-depth: 0
+          # Use a Personal Access Token (PAT) with write permissions
+          # This is crucial for pushing the release commit and tags
+          token: ${{ secrets.GH_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: 'package-lock.json'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: 📦 Install dependencies
+        run: |
+          echo "Starting npm ci at $(date)"
+          npm config set fetch-timeout 60000
+          npm config set fetch-retry-mintimeout 10000
+          npm config set fetch-retry-maxtimeout 60000
+          npm ci --prefer-offline --no-audit --verbose --yes
+          echo "Completed npm ci at $(date)"
+
+      - name: 👤 Configure Git
+        run: |
+          git config user.name "jakub007d"
+          git config user.email "email@fake.ur"
+
+      - name: 🚀 Run Nx Release
+        run: |
+          npx nx release publish
+        env:
+          # Token for publishing to npm
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          # The same token used for checkout to push to GitHub
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}

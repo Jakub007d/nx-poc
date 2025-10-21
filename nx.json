@@ -1,0 +1,40 @@
+{
+  "$schema": "./node_modules/nx/schemas/nx-schema.json",
+  "workspaceLayout": {
+    "libsDir": "packages",
+    "appsDir": "apps"
+  },
+  "plugins": [
+    {
+      "plugin": "@nx/js/typescript",
+      "options": {
+        "typecheck": {
+          "targetName": "typecheck"
+        },
+        "build": {
+          "targetName": "build",
+          "configName": "tsconfig.lib.json",
+          "buildDepsName": "build-deps",
+          "watchDepsName": "watch-deps"
+        }
+      }
+    }
+  ],
+  "release": {
+    "projects": ["packages/*"],
+    "version": {
+      "preVersionCommand": "npx nx run-many -t build",
+      "conventionalCommits": true
+
+    },
+    "changelog": {
+      "workspaceChangelog": false,
+      "projectChangelogs": true,
+        "createRelease": "github"
+    }
+  },
+  "namedInputs": {
+    "sharedGlobals": ["{workspaceRoot}/.github/workflows/release.yml"],
+    "default": ["sharedGlobals"]
+  }
+}
