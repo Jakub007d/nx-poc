@@ -33,6 +33,16 @@
     "version": {
       "conventionalCommits": true,
       "fallbackCurrentVersionResolver": "disk"
+    },
+    "groups": {
+      "addition-group": {
+        "projects": ["addition"],
+        "releaseTagPattern": "addition-v{version}"
+      },
+      "multiplication-group": {
+        "projects": ["multiplication"], 
+        "releaseTagPattern": "multiplication-v{version}"
+      }
     }
   },
   "namedInputs": {
