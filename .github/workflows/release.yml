@@ -41,7 +41,7 @@ jobs:
 
       - name: 🚀 Run Nx Release
         run: |
-          npx nx release publish
+          npx nx release --verbose --first-release
         env:
           # Token for publishing to npm
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
