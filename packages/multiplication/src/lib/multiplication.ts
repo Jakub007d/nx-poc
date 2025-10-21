@@ -1,8 +1,9 @@
 import { add } from '@jakub007d/addition';
 
 export function multiply(a: number, b: number): number {
-  if (b === 0) return 0;
+  if (b === 0 || a === 0) return 0;
   if (b === 1) return a;
+  if (a === 1) return b;
   if (b < 0) return -multiply(a, -b);
   
   let result = 0;
