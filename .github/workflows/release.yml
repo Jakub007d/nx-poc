@@ -41,6 +41,7 @@ jobs:
 
       - name: 🚀 Run Nx Release
         run: |
+          npx nx release
           npx nx release publish
         env:
           # Token for publishing to npm
