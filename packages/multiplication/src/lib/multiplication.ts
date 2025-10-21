@@ -10,5 +10,5 @@ export function multiply(a: number, b: number): number {
   for (let i = 0; i < b; i++) {
     result = add(result, a);
   }
-  return result;
+  return result + 0;
 }
