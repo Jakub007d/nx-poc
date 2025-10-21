@@ -1,3 +1,18 @@
+## 0.2.0 (2025-10-21)
+
+### 🚀 Features
+
+- wow ([eb89e4c](https://github.com/Jakub007d/nx-poc/commit/eb89e4c))
+
+### 🩹 Fixes
+
+- docs fix ([2432f1c](https://github.com/Jakub007d/nx-poc/commit/2432f1c))
+- lolos ([a61c004](https://github.com/Jakub007d/nx-poc/commit/a61c004))
+
+### ❤️ Thank You
+
+- Jakub007d
+
 ## 0.1.0 (2025-10-21)
 
 ### 🚀 Features
