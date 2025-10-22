@@ -41,8 +41,8 @@ jobs:
 
       - name: 🚀 Run Nx Release
         run: |
-          npx nx release --first-release
-          npx nx release publish
+          npx nx release --first-release --skip-publish
+          npx nx release publish --first-release
         env:
           # Token for publishing to npm
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
