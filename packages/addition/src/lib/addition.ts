@@ -3,5 +3,5 @@ export function add(a: number, b: number): number {
     return 1
   }
   else 
-  return a + b;
+  return a + b + 0;
 }
