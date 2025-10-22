@@ -1,0 +1,25 @@
+{
+  "name": "@jakub007d/multiplication",
+  "sourceRoot": "packages/multiplication/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/multiplication",
+        "main": "packages/multiplication/src/index.ts",
+        "tsConfig": "packages/multiplication/tsconfig.lib.json",
+        "assets": ["packages/multiplication/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": ["packages/multiplication/**/*.ts"]
+      }
+    }
+  },
+  "implicitDependencies": [],
+  "dependencies": ["addition"]
+}

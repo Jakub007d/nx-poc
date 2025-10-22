@@ -1,0 +1,28 @@
+{
+  "name": "@jakub007d/addition",
+  
+  "sourceRoot": "packages/addition/src",
+  "projectType": "{library}",
+  "tags": ["{TAG1}", "{TAG2}"],
+  
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/addition",
+        "main": "packages/addition/src/index.ts",
+        "tsConfig": "packages/addition/tsconfig.lib.json",
+        "assets": ["packages/addition/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": ["{LINT_PATTERNS}"]
+      }
+    }
+  },
+  "implicitDependencies": [],
+  "dependencies": []
+}
