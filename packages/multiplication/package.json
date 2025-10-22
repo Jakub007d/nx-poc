@@ -1,6 +1,6 @@
 {
-  "name": "@jakub007d/multiplication",
-  "version": "0.4.2",
+  "name": "@jakub007d/multiplication-v1",
+  "version": "0.0.1",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -19,6 +19,6 @@
   },
   "dependencies": {
     "tslib": "^2.3.0",
-    "@jakub007d/addition": "0.0.1"
+    "@jakub007d/addition-v1": "0.0.1"
   }
 }

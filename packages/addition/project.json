@@ -1,5 +1,5 @@
 {
-  "name": "@jakub007d/addition",
+  "name": "@jakub007d/addition-v1",
   
   "sourceRoot": "packages/addition/src",
   "projectType": "{library}",

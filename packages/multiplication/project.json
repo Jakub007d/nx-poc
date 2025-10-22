@@ -1,5 +1,5 @@
 {
-  "name": "@jakub007d/multiplication",
+  "name": "@jakub007d/multiplication-v1",
   "sourceRoot": "packages/multiplication/src",
   "projectType": "library",
   "targets": {

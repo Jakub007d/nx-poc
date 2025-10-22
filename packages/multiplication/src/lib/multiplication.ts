@@ -1,4 +1,4 @@
-import { add } from '@jakub007d/addition';
+import { add } from '@jakub007d/addition-v1';
 
 export function multiply(a: number, b: number): number {
   if (b === 0 || a === 0) return 0;
