@@ -8,6 +8,9 @@
     },
     {
       "path": "./packages/addition"
+    },
+    {
+      "path": "./packages/division/src"
     }
   ]
 }

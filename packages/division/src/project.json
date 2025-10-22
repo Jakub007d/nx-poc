@@ -1,0 +1,25 @@
+{
+  "name": "@jakub007d/division",
+  "sourceRoot": "packages/division/src/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/division",
+        "main": "packages/division/src/src/index.ts",
+        "tsConfig": "packages/division/src/tsconfig.lib.json",
+        "assets": ["packages/division/src/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint",
+      "options": {
+        "lintFilePatterns": ["packages/division/src/**/*.ts"]
+      }
+    }
+  },
+  "implicitDependencies": [],
+  "dependencies": []
+}
